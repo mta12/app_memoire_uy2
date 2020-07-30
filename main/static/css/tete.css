@@ -1,0 +1,69 @@
+/* HOME PAGE */
+
+header {
+    margin-bottom: 10px;
+    /* border: 2px solid;
+    border-color: green;*/
+}
+
+.en-tete {
+    background-image: url(../img/fond-ecran-liste.jpg);
+}
+
+
+/* NAV styles */
+
+.nav-wrapper {
+    display: flex;
+    /* Mettre un grand epace*/
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side {
+    display: flex;
+}
+
+.nav-wrapper>.left-side>div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    /* Ajouter une animation css d'une demie seconde*/
+    transition: border-botton 0.5s;
+}
+
+.nav-link-wrapper a {
+    /* Dans le nav prend le link a*/
+    color: #8a8a8a;
+    text-decoration: none;
+    /* Ici on anime ausso la couleur*/
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 0px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 0px solid black;
+}
+
+.active-nav-link a {
+    /* Changer le comportement par défaut  */
+    color: black !important;
+}
+
+
+/* INDEX and RESULT PAGE */
+
+
+/* ABOUT PAGE */

@@ -1,0 +1,5 @@
+nom_etudiant,matricule,jurys,encadreurs,type_doc,titre_doc,resume_doc,date_selection,est_soutenu,date_soutenance,note_soutenance,etablissement,type_formation,filiere,nom_fichier
+Mekou nama Franc ,1123,PR Manga Tob | PR Akono, PR Towa Jean,MAS,Le retour du salot,Merci pour tour,2018/11/04,oui,2019/11/04,18,FSEG,ACC,Info,
+ Mekou Franc Franc,11234,PR Manga Tob | PR William, PR Towa Jules,DOC,Le retour du richard,Merci pour tour,2018/11/04,non,,16,FSJP,ACC,DPU,
+NAMA  nama MANGA,1123,PR Manga Tob | PR Akono, PR Towa Jean,MAS,Essai toujours,Merci pour tour,2018/11/04,oui,2019/11/04,18,FSEG,ACC,Info,
+Mekou MANGA MANGA,11234,PR Manga Tob | PR William, PR Towa Jules,DOC,Merci beaucoup,Merci pour tour,2018/11/04,non,,16,FSJP,ACC,DPR,

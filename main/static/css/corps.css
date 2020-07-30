@@ -1,0 +1,103 @@
+/* HOME PAGE */
+
+#home-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.body-court {
+    font-family: "Lato", sans-serif;
+    margin: 25px;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.container {
+    min-width: 100%;
+    /*background-color: #ced4da;*/
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    margin: auto;
+    width: 60%;
+    /*background-image: url('../img/fond-ecran-principal.jpg')*/
+}
+
+.section_search {
+    margin-bottom: 30%;
+    margin-top: 10%;
+}
+
+.page-content .section_search h1 {
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+
+/* ELEMENTS LIST FORM */
+
+.form-inline2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 80%;
+}
+
+.form-control2 {
+    display: block;
+    width: 70%;
+    padding: .375rem .75rem;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 2.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+/* INDEX and RESULT PAGE */
+
+.doc-block {
+    border-radius: 34px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: 12px;
+}
+
+.titre-block {
+    color: #1E26C8;
+}
+
+.titre-doc {
+    color: #19A882;
+    font-size: 14px;
+}
+
+.auteur-doc {
+    color: #079C0A;
+    font-family: alex-brush;
+    font-size: 14px;
+}
+
+
+/* ABOUT PAGE */

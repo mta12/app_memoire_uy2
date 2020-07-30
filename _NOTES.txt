@@ -1,0 +1,131 @@
+- creation de la BD et de l'utilisateur de la BD 
+su - memoireuser 
+    $ createdb memoiredb (dropdb pour supprimer)
+    Au niveau de postgres 
+    $ createuser (dropuser) --interactive -P  memoireuser
+    memoirePassW
+    psql memoiredb (se connecter à la BD)
+    ALTER USER memoireuser CREATEDB;
+
+    \dp base: connaitre les privileges dans une BD sous psql 
+
+-- creation des modèles 
+    ./manage.py createsuperuser 
+        admin 
+        tobmang1@gmail.com
+        Mta_premier
+    ./manage.py makemigrations app 
+    ./manage.py migrate 
+
+-- Creation d'une commande management qui importe les documents 
+    - main/management/commands/import_documents.py
+    - Format du csv: 
+
+    nom_etudiant/nom_complet, matricule_etudiant, jurys: nom(titre), encadreur, type_doc (MAS/DOC), titre_doc, resume_doc, date_selection, est_soutenu, date_soutenance, note_soutenance, etablissement (FSEG/FSJP), type_formation (ACC/PRO), filiere, nom_fichier 
+
+    The get_or_create function returns two values: a model and a boolean flag to
+    indicate whether it is a new model
+    The decorator override_settings is used. Its purpose is to override Django 
+    settings for a specific test.
+
+    
+
+*************************************** API SHELL 
+- API SHELL : DATABASE API ref: P106
+    python manage.py shell 
+        import main.models as m 
+        Question.objects.all()
+        Question.objects.filter(id=1)
+        Question.objects.filter(question_text__startswith='What')
+        Question.objects.get(pk=1)
+
+        q = Question.objects.get(pk=1)
+        # Cas d'un Foreign key: si on veut sa liste d'élements ou ajouter un element à une liste 
+        # exemple d'un étudiant et plusieurs documents 
+        q.choice_set.all()
+        q.choice_set.create(choice_text='Not much', votes=0)
+
+        # Profondeur du relationnel 
+        # The API automatically follows relationships as far as you need.
+        # Use double underscores to separate relationships.
+        # This works as many levels deep as you want; there's no limit.
+        # Find all Choices for any question whose pub_date is in this year
+        # (reusing the 'current_year' variable we created above).
+            >>> Choice.objects.filter(question__pub_date__year=current_year)
+        
+        # Let's delete one of the choices. Use delete() for that.
+            >>> c = q.choice_set.filter(choice_text__startswith='Just hacking')
+            >>> c.delete()
+        
+        # req pour les 5 derniers elts rangés par date de publication 
+
+        # load un template dans une fonction : 
+            def index(request):
+                latest_question_list = Question.objects.order_by('-pub_date')[:5]
+                template = loader.get_template('polls/index.html')
+                context = {
+                    'latest_question_list': latest_question_list,
+                    }
+                return HttpResponse(template.render(context, request))
+
+            OU avec render 
+
+            def index(request):
+                latest_question_list = Question.objects.order_by('-pub_date')[:5]
+                context = {'latest_question_list': latest_question_list}
+                return render(request, 'polls/index.html', context)
+
+/// P47
+%%%%%%%% OU JE SUIS 
+>>> import main.models as m
+>>> doc = m.create_document(10)
+>>> from django.urls import reverse
+>>> url = reverse('main:detailsDocs', args=(doc.pk,))
+>>> url
+'/index/6/'
+>>> from django.test import Client
+>>> client = Client()
+>>> reponse = client.get(url)
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Bad Request: /index/6/
+>>> from django.test.utils import setup_test_environment
+>>> setup_test_environment()
+>>> reponse = client.get(url)
+Not Found: /index/6/
+
+- reponse.content
+- reponse.status_code 
+- reponse.context
+
+
+*********************************
+TEMPLATING DE DJANGO 
+
+- template: P 279
+
+***************************************
+TESTING IN DJANGO 
+
+    The Django Test Client P48 / 338
+        - Intégrer un renderer: from django.test.utils import setup_test_environment
+            setup_test_environment()
+        - Utiliser le test Client pour simuler le browser 
+            django.test.TestCase
+            client = Client() : from django.test import Client
+
+
+- Further readings: LiveServerTestCase (P349)
+
+    - Testing in Django P331
+    
+P26
+- Importation des docs: tjr une erreur voir FICHE SUIVI
+
+"From building django 2.0" P36
+    - Le test ne marche pas (pagination)
+
+FINIR l'interface
+
+TRAVAILLER SUR LA RECHERCHE 
+
+DEPLOYER 

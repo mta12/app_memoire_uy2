@@ -1,0 +1,19 @@
+{% extends "./base_list.html" %}
+
+
+{% block content  %}
+
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline2" method="GET" action="{% url 'main:searchDocs' %}">
+        <input name='q' class="form-control2 mr-sm-2" type="text" placeholder="Saisir un nom ou un texte..." aria-label="Search" style="border-radius: 34px;">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher!</button>
+    </form>
+</nav>
+
+<br/>
+
+{% block content2  %}
+<!-- Afichage de la liste des éléments -->
+{% endblock content2  %}
+
+{% endblock content  %}

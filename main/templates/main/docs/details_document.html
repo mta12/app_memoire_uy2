@@ -1,0 +1,55 @@
+{% extends "../base_list.html" %}
+
+
+{% block content  %}
+<br/>
+<div class="table-responsive">
+<table class="table">
+    <tr class="table-primary">
+      <th>{{ document.get_type_doc_display }}</th>
+    </tr>
+    <tr class="table-default">
+      <th>Année de Soutenance:</th>
+      <td>{{ document.annee_soutenance }}</td>
+    </tr>
+    <tr class="table-default">
+      <th>Titre : </th>
+      <td>{{ document.titre_doc|linebreaks }}</td>
+    </tr>
+    <tr class="table-default">
+      <th>Resumé: </th>
+      <td>{{ document.resume_doc }}</td>
+    </tr>
+    <tr class="table-default">
+      <th>Publié le: </th>
+      <td>{{ document.pub_date|date:"F Y" }}</td>
+    </tr>
+    <tr class="table-default">
+      <th>Auteur: </th>
+      <td>{{ document.auteur }}</td>
+    </tr>
+    <tr class="table-default">
+      <th>Membres du jury: </th>
+      <td><ul>
+      {% for jur in document.jury.all %}
+      <li> {{ jur }} </li>
+      {% endfor %}</td></ul>
+    </tr>
+    <tr class="table-default">
+      <th>Encadreur: </th>
+      <td><ul>
+      {% for enc in document.encadreur.all %}
+      <li> {{ enc }} </li>
+      {% endfor %}</td></ul>
+    </tr>
+    <tr class="table-default">
+     {% if document.fichier %}
+      <th> </th>
+      <td> <a href="{% url 'main:downloadDocs' document.id %}">Telecharger le pdf</a></td>   
+     {% endif %}
+    </tr>  
+  </table>
+</div>
+{% endblock content  %}
+  
+  

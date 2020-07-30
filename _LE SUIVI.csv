@@ -1,0 +1,27 @@
+TACHES PRINCIPALES,SOUS TACHES A ACCOMPLIR, ETAT D'ACCOMPLISSEMENT, date
+gérer la recherche, recherche avec la requete complete, OK, 12/07/2020
+, test, ,
+, recherche avec les mots clés , OK, 17/07/2020
+, test, ,
+, recherche avancée, ,
+, test, ,
+, gestion des accents, OK , 20/07/2020
+IMPORTATION, importation de documents, OK, 13/07/2020
+, test, OK, 13/07/2020
+LES SESSIONS, session entre document et details (vas et vient), OK, Geré par défaut apparamment
+, test, 
+LA PAGINATION, pagination dans index, OK , 11/07/2020
+, test, ,
+, pagination resultat de recherche, OK, 14/07/2020
+, test, ,
+APPARENCE, navigation entre les vues (avec des cliques), OK, 10/07/2020
+, test, NOK , 
+, structuration complete des vues, NOK , 
+, style des vues, NOK , 
+DEPLOIEMENT, deployer application, , 
+LES COMPTES UTILISATEURS
+LES PAIEMENTS
+, inscription (périodique) individuelle,
+, inscription (périodique) groupée avec rabais,
+, paiement au telechargement, 
+, paiement pour promotion publicitaire, 
