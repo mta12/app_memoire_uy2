@@ -95,4 +95,9 @@ Heroku
     - git init Mytest
     - cd 
     - git add -A 
-    
+    - git commit -m "some_message"
+    - create a repo 
+    - git remote add origin https://github.com/mta12/app_memoire_uy2.git
+    - git push origin master
+(Préparer le code en local avant de le déployer utiliser django for begi et practical djanA)
+
