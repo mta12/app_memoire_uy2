@@ -98,7 +98,7 @@ Heroku
     - git commit -m "some_message"
     - create a repo 
     - git remote add origin https://github.com/mta12/app_memoire_uy2.git
-    - git push origin master
+    - git push origin master ou git push -u origin master
 (Préparer le code en local avant de le déployer utiliser django for begi et practical djanA)
 
 • update Pipfile.lock
@@ -112,3 +112,14 @@ touch Procfile
 pipenv install gunicorn==19.9.0
 # blog_project/settings.py
 ALLOWED_HOSTS = ['*']
+
+sudo snap install --classic heroku  (7.42.4)
+heroku login
+heroku create app-mem-uy2
+heroku git:remote -a app-mem-uy2
+pipenv install whitenoise==3.3.1
+
+Ajout a settings 
+installed apps: 'whitenoise.runserver_nostatic', # new!
+dans middleware: 'whitenoise.middleware.WhiteNoiseMiddleware', # new!
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new!
