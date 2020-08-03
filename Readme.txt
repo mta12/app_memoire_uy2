@@ -101,3 +101,14 @@ Heroku
     - git push origin master
 (Préparer le code en local avant de le déployer utiliser django for begi et practical djanA)
 
+• update Pipfile.lock
+• new Procfile
+• install gunicorn
+• update settings.py
+
+pipenv lock
+touch Procfile
+    web: gunicorn blog_project.wsgi --log-file -
+pipenv install gunicorn==19.9.0
+# blog_project/settings.py
+ALLOWED_HOSTS = ['*']

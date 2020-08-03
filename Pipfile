@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 django = ">=3.0.7"
 psycopg2 = "*"
+gunicorn = "==19.9.0"
 
 [requires]
-python_version = "3.6"
+python_version = "3.6.9"
